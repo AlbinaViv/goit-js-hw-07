@@ -1,1 +1,4 @@
-/Users/albinavivdenko / Downloads / src 2 / js /01 - gallery.js / Users / albinavivdenko / Downloads / src 2 / js /02 - lightbox.js / Users / albinavivdenko / Downloads / src 2 / js / gallery - items.js
+import { galleryItems } from './gallery-items.js';
+// Change code below this line
+
+console.log(galleryItems);
