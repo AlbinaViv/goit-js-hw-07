@@ -1,4 +1,4 @@
-import { galleryItems } from './galler-items';
+import { galleryItems } from './galler-items.js';
 
 console.log(galleryItems);
 
