@@ -2,7 +2,8 @@ import { galleryItems } from './galler-items.js';
 
 console.log(galleryItems);
 
-const liGallery = document.querySelector('.gallery');
+const ulEl = document.querySelector('.gallery');
+
 
 function createGalleryMarkup(items) {
     return items
@@ -13,12 +14,17 @@ function createGalleryMarkup(items) {
                     alt="${description}" />
             </a>
         </li>`
-        )
-        .join('');
-}
-const addGallaryMarkup = createGalleryMarkup(galleryItems);
+        ).join('');
+};
 
-liGallery.innerHTML = addGallaryMarkup;
+ulEl.insertAdjacentHTML('beforeend', createGalleryMarkup(galleryItems));
+
+// createGalleryMarkup(galleryItems);
+
+
+
+// ulEl.innerHTML = createGalleryMarkup(galleryItems);
+
 
 // liGallery.addEventListener('click', () =>
 
