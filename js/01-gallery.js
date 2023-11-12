@@ -1,4 +1,4 @@
-import { galleryItems } from './galler-items.js';
+import { galleryItems } from './gallery-items.js';
 
 console.log(galleryItems);
 
@@ -19,14 +19,22 @@ function createGalleryMarkup(items) {
 
 ulEl.insertAdjacentHTML('beforeend', createGalleryMarkup(galleryItems));
 
-// createGalleryMarkup(galleryItems);
+ulEl.addEventListener('click', imgContainerClick);
 
+function imgContainerClick(event) {
+    event.preventDefault();
 
+    if (event.target.nodeName !== 'IMG') {
+        return;
+    }
 
-// ulEl.innerHTML = createGalleryMarkup(galleryItems);
+    const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width="800" height="600">`);
 
+    instance.show();
 
-// liGallery.addEventListener('click', () =>
-
-
-
+    ulEl.addEventListener('keydown', (event) => {
+        if (event.code === 'Escape') {
+            instance.close();
+        }
+    });
+}
