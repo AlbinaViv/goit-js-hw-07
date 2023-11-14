@@ -19,17 +19,10 @@ function createGalleryMarkup(items) {
 
 ulEl.insertAdjacentHTML('beforeend', createGalleryMarkup(galleryItems));
 
-ulEl.addEventListener('click', imgContainerClick);
 
-function imgContainerClick(event) {
-    event.preventDefault();
+const lightbox = new SimpleLightbox('.gallery__item a', {
+    captionsData: "alt",
+    captionDelay: 250,
+});
 
-    if (event.target === event.currentTarget) {
-        return gallery.open();
-    }
-    const lightbox = new SimpleLightbox('.gallery__item a', {
-        captionsData: "alt",
-        captionDelay: 250,
-    });
 
-}
